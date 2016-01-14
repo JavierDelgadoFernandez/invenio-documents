@@ -41,13 +41,16 @@ Create a record:
    $ echo '{"title": "Test", "files": [{"uri": "/tmp/hello.txt"}]}' > r.json
    $ flask -a app.py records create < r.json
 
+Grab the UUID because printed in your terminal since it is the identifier of
+the record.
+
 Modify content of the file stored in record:
 
 .. code-block:: console
 
-   $ echo 'Bye bye!' | flask -a app documents setcontents -r 1 -p /files/0/uri
+   $ echo 'Bye!' | flask -a app documents setcontents -i UUID -p /files/0/uri
    $ cat /tmp/hello.txt
-   Bye bye!
+   Bye!
 
 """
 
